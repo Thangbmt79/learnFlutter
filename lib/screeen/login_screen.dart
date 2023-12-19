@@ -1,4 +1,5 @@
 import 'package:firstflutter/main.dart';
+import 'package:firstflutter/screeen/register_screen.dart';
 import 'package:firstflutter/theme/color.dart';
 import 'package:firstflutter/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ElevatedButton(
-              child: const Text(
+              child: Text(
                 "Login",
               ),
               style: ElevatedButton.styleFrom(
@@ -86,6 +87,35 @@ class _LoginScreenState extends State<LoginScreen> {
                 handleLogin();
               },
             ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center, // dùng để center text
+            children: [
+              const Text(
+                "You don't have an account? ",
+                style: TextStyle(fontSize: 14),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RegisterScreen()),
+                  );
+                },
+                child: const Text(
+                  "Sign Up",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ],
           )
         ]),
       )),
