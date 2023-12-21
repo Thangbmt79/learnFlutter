@@ -9,7 +9,7 @@ class Button extends StatelessWidget {
   final String buttonText;
   final Color textColor;
   final Color backgroundColor;
-  final Color iconColor; // New property for icon color
+  final Color iconColor;
 
   const Button({
     Key? key,

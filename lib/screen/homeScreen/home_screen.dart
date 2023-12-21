@@ -1,11 +1,16 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:firstflutter/screen/homeScreen/Content.dart';
+import 'package:firstflutter/json/root_app_json.dart';
+import 'package:firstflutter/page/bottom_navigator.dart';
+import 'package:firstflutter/screen/homeScreen/CommingSoon.dart';
+import 'package:firstflutter/screen/homeScreen/TheTopChoice.dart';
 import 'package:firstflutter/screen/homeScreen/ScrollChip.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const routerName = "/home";
+
   const HomeScreen({super.key});
 
   @override
@@ -25,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(
               fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
         ),
+
         actions: [
           IconButton(
             icon: SvgPicture.asset(
@@ -47,13 +53,19 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: const SafeArea(
-          child: Padding(
-        padding: EdgeInsets.fromLTRB(14.0, 0, 14.0, 0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          ScrollChip(),
-          ContentHome(),
-        ]),
-      )),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(14.0, 0, 14.0, 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ScrollChip(),
+              CommingSoon(),
+              TheTopChoice(),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: const GetFooter(itemsBottom: itemsBottom),
     );
   }
 }

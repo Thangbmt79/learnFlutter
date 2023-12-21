@@ -3,13 +3,12 @@ import 'package:firstflutter/main.dart';
 import 'package:firstflutter/screen/helper/button/button.dart';
 import 'package:firstflutter/screen/homeScreen/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class ContentHome extends StatefulWidget {
-  const ContentHome({super.key});
+class TheTopChoice extends StatefulWidget {
+  const TheTopChoice({super.key});
 
   @override
-  State<ContentHome> createState() => _ContentHomeState();
+  State<TheTopChoice> createState() => _TheTopChoiceState();
 }
 
 handlePlay() {
@@ -23,7 +22,7 @@ handleList(BuildContext context) {
   );
 }
 
-class _ContentHomeState extends State<ContentHome> {
+class _TheTopChoiceState extends State<TheTopChoice> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
