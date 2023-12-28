@@ -2,6 +2,9 @@
 
 import 'package:firstflutter/json/root_app_json.dart';
 import 'package:firstflutter/main.dart';
+import 'package:firstflutter/screen/homeScreen/home_screen.dart';
+import 'package:firstflutter/screen/login_screen.dart';
+import 'package:firstflutter/screen/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,6 +23,34 @@ class _GetFooterState extends State<GetFooter> {
       activeTab = index;
     });
     logger.i('name: $name');
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+        break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+        break;
+      case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const SearchScreen()),
+        );
+        break;
+      case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()),
+        );
+        break;
+      default:
+        break;
+    }
   }
 
   @override

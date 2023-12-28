@@ -5,6 +5,7 @@ import 'package:firstflutter/page/bottom_navigator.dart';
 import 'package:firstflutter/screen/homeScreen/CommingSoon.dart';
 import 'package:firstflutter/screen/homeScreen/TheTopChoice.dart';
 import 'package:firstflutter/screen/homeScreen/ScrollChip.dart';
+import 'package:firstflutter/screen/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -24,13 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.black87,
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        // automaticallyImplyLeading: false,
+        automaticallyImplyLeading: false,
         title: const Text(
           'New & Hot',
           style: TextStyle(
               fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
         ),
-
         actions: [
           IconButton(
             icon: SvgPicture.asset(
@@ -48,20 +48,27 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 24,
               height: 24,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchScreen()),
+              );
+            },
           ),
         ],
       ),
       body: const SafeArea(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(14.0, 0, 14.0, 0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ScrollChip(),
-              CommingSoon(),
-              TheTopChoice(),
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ScrollChip(),
+                CommingSoon(),
+                TheTopChoice(),
+              ],
+            ),
           ),
         ),
       ),
