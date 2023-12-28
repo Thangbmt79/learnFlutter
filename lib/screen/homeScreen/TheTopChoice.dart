@@ -91,7 +91,7 @@ class _TheTopChoiceState extends State<TheTopChoice> {
                             padding: const EdgeInsets.only(top: 5, left: 7),
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              users.title,
+                              users.titlee,
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
